@@ -1,0 +1,141 @@
+
+.first-animation {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .ball {
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        margin-left: 10px;
+        background-color: hotpink;
+        animation: ball 1.4s ease-in-out infinite;
+        transform-origin: center center;
+    }
+
+    @for $num from 1 to 9 {
+        .ball:nth-child(#{$num}){
+            animation-delay: $num * .2s;
+        }            
+    }
+    
+    @keyframes ball {
+        0% {
+            transform: translateY(0) scale(1);
+            background-color: blueviolet;
+        }
+        50% {
+            transform: translateY(30px) scale(0.5);
+            background-color: greenyellow;
+        }
+        100% {
+            transform: translateY(0px) scale(1);
+            background-color: hotpink;
+        }
+    }
+}
+
+.second-animation {
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .square {
+        height: 80px;
+        width: 80px;
+        border: 10px solid rebeccapurple;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: square 2s infinite;
+
+        .circle {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 10px solid aqua;
+            animation: circle 2s infinite;
+        }
+    }
+
+    @keyframes square {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(180deg) scale(0.6);
+            border-color: aqua;
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes circle {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            border-color: rebeccapurple;
+            transform: scale(0.8);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+}
+
+.third-animation {
+        background: #3b5aa3;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    #square {
+        height: 150px;
+        width: 150px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 10px 10px 20px #1a2848;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #square::before {
+        content: "";
+        background: conic-gradient(
+            white,
+            transparent 90deg
+        );
+        width: 150%;
+        height: 150%;
+        position: absolute;
+        animation: moving-border 3s linear infinite;
+    }
+
+    #square::after {
+        content: "";
+        background-color: #3b5aa3;
+        height: 90%;
+        width: 90%;
+        position: absolute;
+        border-radius: 15px;
+        box-shadow: inset 10px 10px 20px #1a2848;
+    }
+
+    @keyframes moving-border {
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(-360deg);}
+    }
+}
+
+

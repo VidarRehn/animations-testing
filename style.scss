@@ -119,7 +119,7 @@
         width: 150%;
         height: 150%;
         position: absolute;
-        animation: moving-border 3s linear infinite;
+        animation: moving-border 3s linear infinite;   
     }
 
     #square::after {
@@ -128,7 +128,7 @@
         height: 90%;
         width: 90%;
         position: absolute;
-        border-radius: 15px;
+        border-radius: 10px;
         box-shadow: inset 10px 10px 20px #1a2848;
     }
 
@@ -139,3 +139,57 @@
 }
 
 
+.fourth-animation {
+    background-color: rgb(41, 41, 41);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .outer-circle {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        display: flex;
+        box-shadow: 0px 0 20px 4px rgb(22, 22, 22);
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+
+        .main-circle {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background: radial-gradient(yellow 0%, red 40%, transparent 65%);
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: glow 1.6s linear infinite;
+
+            .inner-circle {
+                height: 180px;
+                width: 180px;
+                border-radius: 50%;
+                background-color: rgb(41, 41, 41);
+                box-shadow: inset 0px 0 30px 10px rgb(22, 22, 22);
+            }
+        }
+    }
+
+    @keyframes glow {
+        0% {
+            height: 200px;
+            width: 200px;
+        }
+        50% {
+            height: 350px;
+            width: 350px;
+        }
+        100% {
+            height: 200px;
+            width: 200px;
+        }
+    }
+}

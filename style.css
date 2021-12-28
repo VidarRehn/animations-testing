@@ -254,7 +254,7 @@
   height: 90%;
   width: 90%;
   position: absolute;
-  border-radius: 15px;
+  border-radius: 10px;
   -webkit-box-shadow: inset 10px 10px 20px #1a2848;
           box-shadow: inset 10px 10px 20px #1a2848;
 }
@@ -278,6 +278,97 @@
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg);
+  }
+}
+
+.fourth-animation {
+  background-color: #292929;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fourth-animation .outer-circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0px 0 20px 4px #161616;
+          box-shadow: 0px 0 20px 4px #161616;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.fourth-animation .outer-circle .main-circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: radial-gradient(yellow 0%, red 40%, transparent 65%);
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: glow 1.6s linear infinite;
+          animation: glow 1.6s linear infinite;
+}
+
+.fourth-animation .outer-circle .main-circle .inner-circle {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  background-color: #292929;
+  -webkit-box-shadow: inset 0px 0 30px 10px #161616;
+          box-shadow: inset 0px 0 30px 10px #161616;
+}
+
+@-webkit-keyframes glow {
+  0% {
+    height: 200px;
+    width: 200px;
+  }
+  50% {
+    height: 350px;
+    width: 350px;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@keyframes glow {
+  0% {
+    height: 200px;
+    width: 200px;
+  }
+  50% {
+    height: 350px;
+    width: 350px;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
   }
 }
 /*# sourceMappingURL=style.css.map */

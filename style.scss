@@ -169,8 +169,8 @@
             animation: glow 1.6s linear infinite;
 
             .inner-circle {
-                height: 180px;
-                width: 180px;
+                height: 160px;
+                width: 160px;
                 border-radius: 50%;
                 background-color: rgb(41, 41, 41);
                 box-shadow: inset 0px 0 30px 10px rgb(22, 22, 22);
@@ -191,5 +191,40 @@
             height: 200px;
             width: 200px;
         }
+    }
+}
+
+.fifth-animation {
+    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .moving-box {
+        height: 150px;
+        width: 150px;
+        animation: moving-box 5s linear infinite;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        .moving-ball {
+            height: 30px;
+            width: 30px;
+            background-color: black;
+            border-radius: 50%;
+            animation: moving-ball 2s linear infinite;
+        }
+    }
+
+    @keyframes moving-box {
+        0% {transform: translateX(0px)}
+        100% {transform: translateX(100vw);}
+    }
+
+    @keyframes moving-ball {
+        0% {transform: translateY(0px);}
+        50% {transform: translateY(120px);}
+        100% {transform: translateY(0px);}
     }
 }
